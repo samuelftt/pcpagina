@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Samvex</title>
+<meta name="description" content="Samvex — constructor de PC, compatibilidad, FPS y recomendaciones en pesos colombianos.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header>
+<a class="brand" href="#inicio"><img src="assets/logo.svg" alt="" width="30" height="30">Samvex</a>
+<div class="header-actions">
+  <div id="user-badge" class="user-badge hidden" aria-live="polite"></div>
+  <button id="logout-btn" class="btn small alt hidden" type="button">Cerrar sesión</button>
+</div>
+<button id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">☰</button>
+<nav id="nav" aria-label="Principal">
+<a href="#inicio">Inicio</a><a href="#constructor">Constructor</a><a href="#catalogo">Catálogo</a><a href="#comparador">Comparador</a><a href="#fps">FPS</a><a href="#asistente">Asistente</a><a href="#cuenta">Cuenta</a><a href="#guardados">Guardados</a>
+</nav>
+</header>
+<main id="main">
+<section id="inicio" class="sec">
+<div class="hero">
+<div>
+<h1>Arma tu PC gamer sin adivinar</h1>
+<p>Elige componentes, comprueba que encajan, estima los FPS y el consumo, y controla el gasto en pesos colombianos.</p>
+<div class="row hero-actions"><a class="btn" href="#constructor">Empezar a construir</a> <a class="btn alt" href="#catalogo">Ver catálogo</a></div>
+</div>
+<div class="hero-side">
+<div class="metric-grid" id="hero-stats"></div>
+</div>
+</div>
+<div class="contact-card card">
+  <div class="contact-header">
+    <span class="contact-badge">Asesoría profesional</span>
+    <h3>Necesitas ayuda para elegir tu PC ideal</h3>
+  </div>
+  <p>Te ayudamos a definir el mejor presupuesto, compatibilidad y rendimiento según tus juegos y necesidades.</p>
+  <div class="contact-details">
+    <div><strong>WhatsApp</strong><a href="https://wa.me/573001112233" target="_blank" rel="noopener noreferrer">+57 300 111 2233</a></div>
+    <div><strong>Email</strong><a href="mailto:asesoria@samvex.com">asesoria@samvex.com</a></div>
+    <div><strong>Horario</strong><span>Lun - Sab · 9:00 AM - 7:00 PM</span></div>
+  </div>
+</div>
+<div class="grid" id="feats"></div>
+</section>
+
+<section id="cuenta" class="sec" hidden>
+  <h2>Cuenta de usuario</h2>
+  <div class="auth-layout">
+    <div class="card auth-panel">
+      <div class="auth-tabs" role="tablist" aria-label="Autenticación">
+        <button class="auth-tab active" data-mode="login" type="button" role="tab" aria-selected="true">Iniciar sesión</button>
+        <button class="auth-tab" data-mode="register" type="button" role="tab" aria-selected="false">Crear cuenta</button>
+      </div>
+      <form id="auth-form" class="auth-form" novalidate>
+        <div id="auth-name-wrap" class="field hidden">
+          <label for="auth-name">Nombre completo</label>
+          <input id="auth-name" type="text" maxlength="60" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="auth-email">Correo electrónico</label>
+          <input id="auth-email" type="email" placeholder="usuario@ejemplo.com" required>
+        </div>
+        <div class="field">
+          <label for="auth-password">Contraseña</label>
+          <input id="auth-password" type="password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        <button id="auth-submit" class="btn" type="submit">Entrar</button>
+      </form>
+    </div>
+    <div class="card auth-info">
+      <h3>¿Qué puedes hacer con tu cuenta?</h3>
+      <ul class="list">
+        <li><span>✔ Guardar configuraciones personales</span></li>
+        <li><span>✔ Ver tus builds en cualquier dispositivo del navegador</span></li>
+        <li><span>✔ Mantener tu historial de Samvex separado</span></li>
+        <li><span>✔ Cargar tus PCs creadas en un solo clic</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="asistente" class="sec" hidden>
+  <h2>Asistente IA de Samvex</h2>
+  <div class="chat-layout">
+    <div class="card chat-panel">
+      <div id="assistant-chat-messages" class="chat-messages" aria-live="polite">
+        <div class="chat-message bot">
+          <strong>Samvex IA</strong>
+          <p>Hola, soy tu asistente. Puedo ayudarte a responder dudas sobre componentes, compatibilidad y recomendarte una PC según tu uso, presupuesto y juegos.</p>
+        </div>
+      </div>
+      <form id="assistant-chat-form" class="chat-form">
+        <input id="assistant-chat-input" type="text" aria-label="Pregunta al asistente" placeholder="Ej: Quiero una PC para jugar Fortnite y editar videos con 4 millones de presupuesto" autocomplete="off">
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+      <div class="chat-suggestions">
+        <button type="button" class="chat-suggestion">Recomiéndame una PC para gaming</button>
+        <button type="button" class="chat-suggestion">¿Qué PC me sirve para edición?</button>
+        <button type="button" class="chat-suggestion">¿Cuál es mejor para 3 millones?</button>
+      </div>
+    </div>
+    <div class="card chat-side">
+      <h3>Qué puede hacer</h3>
+      <ul class="list">
+        <li><span>✔ Recomendar hardware por uso</span></li>
+        <li><span>✔ Responder dudas de compatibilidad</span></li>
+        <li><span>✔ Sugerir builds por presupuesto</span></li>
+        <li><span>✔ Orientarte según juegos y trabajo</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="constructor" class="sec" hidden>
+<h2>Constructor de PC</h2>
+<div class="cols">
+<div class="card"><div id="selects"></div><div class="row"><button id="clear" class="btn alt">Vaciar configuración</button></div></div>
+<aside class="card">
+<h3>Resumen y total</h3><div id="sum"></div>
+<label for="budget">Presupuesto (COP)</label>
+<input id="budget" type="number" min="0" step="50000" value="5000000">
+<div class="bar" aria-hidden="true"><i id="bbar"></i></div><p id="bmsg" class="muted"></p>
+<h3>Compatibilidad</h3><ul id="compat" class="list"></ul>
+<h3>Consumo de energía</h3><p id="power"></p>
+<label for="bname">Nombre de la configuración</label>
+<input id="bname" maxlength="40" placeholder="Mi PC 1080p">
+<div class="row"><button id="save" class="btn">Guardar</button><button id="exp" class="btn alt">Exportar TXT</button><button id="share" class="btn alt">Copiar enlace</button></div>
+</aside>
+</div>
+</section>
+
+<section id="catalogo" class="sec" hidden>
+<h2>Catálogo de componentes</h2>
+<div class="filters">
+<div><label for="q">Buscar</label><input id="q" type="search" placeholder="Ej. RTX, Ryzen, DDR5"></div>
+<div><label for="fcat">Categoría</label><select id="fcat"></select></div>
+<div><label for="fsort">Ordenar por</label><select id="fsort"><option value="n">Nombre</option><option value="a">Precio: menor a mayor</option><option value="d">Precio: mayor a menor</option></select></div>
+<div><label for="fmax">Precio máximo: <output id="pout"></output></label><input id="fmax" type="range" min="100000" max="9000000" step="100000" value="9000000"></div>
+<button id="refresh" class="btn">Actualizar precios</button>
+</div>
+<p id="pstat" class="muted" role="status">Precios de referencia en COP. Pulsa «Actualizar precios» para consultar Mercado Libre.</p>
+<h3>Buscar en todo Mercado Libre Colombia</h3><div class="filters"><div><label for="lq">Producto</label><input id="lq" type="search" placeholder="Ej. RTX 4070 Super"></div><div><button id="lgo" class="btn">Buscar en vivo</button></div></div><div id="live" class="grid"></div>
+<h3>Componentes de Samvex</h3><div id="cgrid" class="grid"></div>
+</section>
+
+<section id="comparador" class="sec" hidden>
+<h2>Comparador de componentes</h2>
+<div class="filters">
+<div><label for="ccat">Categoría</label><select id="ccat"></select></div>
+<div><label for="ca">Componente A</label><select id="ca"></select></div>
+<div><label for="cb">Componente B</label><select id="cb"></select></div>
+</div>
+<div id="ctable" class="tw card"></div>
+</section>
+
+<section id="fps" class="sec" hidden>
+<h2>Calculadora de FPS</h2>
+<div class="cols">
+<div class="card">
+<label for="fgpu">Tarjeta gráfica</label><select id="fgpu"></select>
+<label for="fcpu">Procesador</label><select id="fcpu"></select>
+<label for="fgame">Juego</label><select id="fgame"></select>
+<label for="fres">Resolución</label><select id="fres"></select>
+<label for="fq">Calidad gráfica</label><select id="fq"></select>
+<div class="row"><button id="fuse" class="btn alt">Usar mi configuración</button></div>
+</div>
+<div class="card" id="fout" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="guardados" class="sec" hidden>
+<h2>Configuraciones guardadas</h2>
+<p class="muted">Se guardan solo en este navegador (localStorage). Expórtalas a TXT para llevarlas contigo.</p>
+<div id="saved" class="grid"></div>
+</section>
+</main>
+<footer>Samvex · Los precios son orientativos y pueden variar en tienda. Verifica siempre antes de comprar.</footer>
+<div class="chat-widget" aria-live="polite">
+  <button id="chat-toggle" class="chat-toggle" type="button" aria-label="Abrir chat" aria-expanded="false">💬</button>
+  <div id="chat-panel" class="chat-panel-floating hidden" role="dialog" aria-label="Asistente IA de Samvex">
+    <div class="chat-header">
+      <div class="chat-header-title">
+        <span class="chat-online-dot" aria-hidden="true"></span>
+        <span>Samvex IA</span>
+      </div>
+      <button id="chat-close" class="chat-close" type="button" aria-label="Cerrar chat">×</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="chat-message bot">
+        <strong>Samvex IA</strong>
+        <p>Hola, soy tu asistente. Puedo ayudarte a responder dudas sobre componentes, compatibilidad y recomendarte una PC según tu uso, presupuesto y juegos.</p>
+      </div>
+    </div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" aria-label="Pregunta al asistente" placeholder="Ej: Quiero una PC para gaming con 3 millones" autocomplete="off">
+      <button class="btn small" type="submit">Enviar</button>
+    </form>
+    <div class="chat-suggestions">
+      <button type="button" class="chat-suggestion">Recomiéndame una PC para gaming</button>
+      <button type="button" class="chat-suggestion">¿Qué PC me sirve para edición?</button>
+      <button type="button" class="chat-suggestion">¿Cuál es mejor para 3 millones?</button>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

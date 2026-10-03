@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Logo PC Forge gamer</title>
+  <desc id="desc">Logo estilizado de una PC gaming con monitor y ventiladores</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7f8cff"/>
+      <stop offset="55%" stop-color="#4ac8a9"/>
+      <stop offset="100%" stop-color="#f7b660"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="34" fill="#0a0f16"/>
+  <rect x="28" y="28" width="124" height="88" rx="14" fill="#141d2b" stroke="#2a384d" stroke-width="2"/>
+  <rect x="38" y="38" width="104" height="68" rx="8" fill="url(#g1)" opacity="0.9"/>
+  <rect x="62" y="54" width="58" height="9" rx="4" fill="#0a0f16" opacity="0.9"/>
+  <circle cx="54" cy="112" r="8" fill="#7f8cff"/>
+  <circle cx="74" cy="112" r="8" fill="#4ac8a9"/>
+  <circle cx="94" cy="112" r="8" fill="#f7b660"/>
+  <circle cx="114" cy="112" r="8" fill="#7f8cff"/>
+  <rect x="42" y="126" width="96" height="12" rx="6" fill="#111c2d"/>
+  <path d="M54 126L60 144H120L126 126" fill="#1a2538"/>
+  <path d="M74 146L90 146" stroke="#82f3c9" stroke-width="6" stroke-linecap="round"/>
+</svg>
